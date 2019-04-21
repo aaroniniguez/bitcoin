@@ -14,7 +14,7 @@ request(bitcoinUrl, function(error, response, body){
         }
         var currentVal = parseFloat(obj.bpi.USD.rate.replace(",",""));
         var profit = Math.round(currentVal/initialPrice * 2570 - 2570); 
-        imessage.send(aaron, obj.bpi.USD.rate + "\nprofit: "+profit);
+        imessage.send(aaron, currentVal + "\nprofit: "+profit);
     }
     else{
         console.log("error:", error);
