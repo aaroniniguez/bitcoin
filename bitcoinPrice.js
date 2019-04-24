@@ -15,7 +15,8 @@ request(bitcoinUrl, function(error, response, body){
         }
         var currentVal = parseFloat(obj.bpi.USD.rate.replace(",",""));
         var profit = Math.round(currentVal/initialPrice * leverage - leverage); 
-        imessage.send(aaron, "Bitcoin: $"+currentVal + "\nprofit: $"+profit);
+        var message = `Bitcoin: $${currentVal} \nprofit: $${profit}`;
+        imessage.send(aaron, message);
     }
     else{
         console.log("error:", error);
